@@ -1490,6 +1490,13 @@ Usage:
                 details: { error: true },
               };
             }
+            if (replyWaiter) {
+              return {
+                content: [{ type: "text", text: "Already waiting for a reply" }],
+                isError: true,
+                details: { error: true },
+              };
+            }
             if (sendTo === connectedClient.sessionId) {
               return {
                 content: [{ type: "text", text: "Cannot message the current session" }],
@@ -1499,6 +1506,7 @@ Usage:
             }
             const questionId = randomUUID();
             replyPromise = waitForReply(sendTo, questionId, _signal);
+            replyPromise.catch(() => undefined);
             const sendResult = await connectedClient.send(sendTo, {
               messageId: questionId,
               text: message,
