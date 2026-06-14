@@ -482,3 +482,8 @@ Use pi-messenger for multi-agent swarms working on a shared task. Use pi-interco
 - **No attachments UI** — `file`, `snippet`, and `context` attachments are supported in the protocol, but not in the compose overlay
 - **Only connected sessions appear** — The list shows Pi sessions that have loaded `pi-intercom` and successfully registered with the broker, not every open Pi process on the machine
 - **Broker lifecycle** — The broker auto-spawns on first use and exits when idle; sessions reconnect automatically if the broker restarts
+
+
+---
+
+**🔒 Related:** [iscooked.com](https://github.com/johnpippett/iscooked) — One-command local AI security scanner. Find out if your Ollama, LM Studio, or self-hosted LLM setup is leaking. `curl -fsSL https://iscooked.com/iscooked.com | bash`
